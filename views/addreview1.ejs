@@ -1,0 +1,98 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Book Review</h1>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-7 d-flex align-items-center justify-content-center">
+          <img
+            src="data:image/jpeg;base64,<%= book.cover_image.toString('base64') %>"
+            alt="<%= book.title %> cover"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-5 text-start Details"> 
+          <h2 class="text-body-emphasis"><%= book.title %></h2>
+          <p class="bookNameSub">Author : <%= book.authors %></p>
+          <p class="bookNameSub">Publish Date : <%= book.publish_date %></p>
+          <p class="bookNameSub">ISBN : <%= book.isbn %></p>
+          <p class="bookNameSub">Catagory : <%= book.category %></p>  
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="container py-4 addreview1form mt-5">
+      <form action="/reviews/<%= book.isbn %>" method="POST">
+        <div class="mb-3 rating-container">
+          <label for="bookRating" class="form-label">Rating</label>
+          <div class="star-rating">
+            <input type="radio" id="star10" name="rating" value="10" />
+            <label for="star10" title="10 stars">&#9733;</label>
+            <input type="radio" id="star9" name="rating" value="9" />
+            <label for="star9" title="9 stars">&#9733;</label>
+            <input type="radio" id="star8" name="rating" value="8" />
+            <label for="star8" title="8 stars">&#9733;</label>
+            <input type="radio" id="star7" name="rating" value="7" />
+            <label for="star7" title="7 stars">&#9733;</label>
+            <input type="radio" id="star6" name="rating" value="6" />
+            <label for="star6" title="6 stars">&#9733;</label>
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" title="1 star">&#9733;</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="Review" class="form-label">Review</label>
+          <textarea
+            class="form-control"
+            id="Review"
+            name="review"
+            placeholder="A short review about book"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="pros" class="form-label">Pros</label>
+          <textarea
+            class="form-control"
+            id="pros"
+            name="pros"
+            placeholder="What did you like about the book?"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="cons" class="form-label">Cons</label>
+          <textarea
+            class="form-control"
+            id="cons"
+            name="cons"
+            placeholder="What did you dislike about the book?"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="MyNotes" class="form-label">Notes</label>
+          <textarea
+            class="form-control"
+            id="MyNotes"
+            name="notes"
+            placeholder="Write 100 words notes of book"
+          ></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

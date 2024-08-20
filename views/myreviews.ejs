@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<div class="container text-dark">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/reviews/" class="nav-link px-2 link-secondary">All Reviews</a></li>
+      <li><a href="/reviews/my" class="nav-link px-2">My Reviews</a></li>
+      <li><a href="/books/" class="nav-link px-2">Add reviews</a></li>
+      <li><a href="/general/faq" class="nav-link px-2">FAQs</a></li>
+      <li><a href="/general/about" class="nav-link px-2">About</a></li>
+    </ul>
+  </header>
+
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">My Reviews</h1>
+    <div class="row mb-2">
+      <% reviews.forEach(review => { %>
+      <div class="col-md-12">
+        <div
+          class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative mt-5"
+        >
+          <div class="col-auto d-none d-lg-block mt-3 mb-3">
+            <img
+              src="data:image/jpeg;base64,<%= review.cover_image.toString('base64') %>"
+              alt="<%= review.title %> cover"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis"
+              ><%= review.author %></strong
+            >
+            <h3 class="mb-0"><%= review.title %></h3>
+            <div class="mb-1 text-body-secondary"><%= review.publish_date %></div>
+            <div class="mb-1 text-body-secondary"><%= review.created_at %></div>
+            <p class="card-text mb-auto"><%= review.pros.length > 30 ? review.pros.substring(0, 150) + '...' : review.pros %></p>
+            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading
+              
+            </a>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

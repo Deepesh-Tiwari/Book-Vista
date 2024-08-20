@@ -1,0 +1,86 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.bg-body-tertiary {
+  background-color: white !important;
+}
+
+.addreviewform{
+  padding-top: 5rem;
+}
+
+.custom-textbox {
+  border: 2px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.custom-textbox:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+.rating-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.star-rating {
+  display: block;
+  direction: ltr; /* Makes the lowest value star appear first */
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #6f704d;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+  color: #ddd;
+}
+
+.star-rating input[type="radio"]:checked ~ label:hover,
+.star-rating input[type="radio"]:checked ~ label:hover ~ label {
+  color:   #ddd; /* Resets color on hover after selection */
+}
+
+
+
+
+
+.Details{
+  text-align: left;
+}
+
+.position-static {
+  text-align: left;
+}
+
+.faq-container{
+  text-align: left;
+}

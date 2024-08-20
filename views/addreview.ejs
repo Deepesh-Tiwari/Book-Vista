@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<div class="container py-4">
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">ENTER ISBN NUMBER OF BOOK</h1>
+      <p class="col-md-8 fs-4">
+        ISBN (International Standard Book Number) is a unique identifier for
+        books, ensuring accurate identification and ordering. The easiest way to
+        get an ISBN is by checking the book's barcode or You can find an ISBN by
+        searching online bookstores or google.
+      </p>
+      <div class="addreviewform">
+        <form action="/books/" method="POST">
+          <div class="form-group">
+            <label for="isbn">ISBN (International Standard Book Number):</label>
+            <input type="text" class="form-control" name="isbn" />
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">Enter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>
